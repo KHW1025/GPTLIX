@@ -1,0 +1,326 @@
+@charset 'utf-8';
+
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Shrikhand&display=swap");
+
+@font-face {
+  font-family: "GmarketSansMedium";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  font-family: "GmarketSansMedium";
+}
+
+body {
+  margin: 0;
+}
+
+.bg {
+  width: 100%;
+  height: 100%;
+  background-image: url(./img/movie_bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrap {
+  max-width: 650px;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000000c9;
+  backdrop-filter: blur(2.5px);
+  padding: 0 4rem;
+  border-radius: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+.logo_img {
+  width: 200px;
+  margin: 2rem auto 0;
+}
+.logo_img img {
+  width: 100%;
+}
+.guide_chat {
+  width: 100%;
+}
+.favorite_con {
+  margin-top: 4rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.guide_chat label {
+  color: #ffffff;
+  padding-top: 0.5rem;
+  width: 200px;
+  margin-bottom: 0.5rem;
+}
+.guide_chat input {
+  width: 95%;
+  border: none;
+  outline: none;
+  padding: 1rem;
+  background-color: #ffffff16;
+  transition: 0.3s;
+  border-radius: 0.5rem;
+  color: #ffffff;
+  position: relative;
+}
+.guide_chat input::placeholder {
+  color: #cacaca;
+}
+.guide_chat input::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #ffffff16;
+  border: 1px solid red;
+  width: 100%;
+  height: 100%;
+}
+.guide_chat input:focus {
+  background-color: #1321448d;
+}
+.btnCon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#BtnSendMessage {
+  font-family: "GmarketSansMedium";
+  margin-top: 4rem;
+  border-radius: 0.5rem;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background-color: #db202c;
+  color: rgb(255, 255, 255);
+  font-size: 1rem;
+  transition: 0.3s;
+}
+#BtnSendMessage:hover {
+  background-color: #95040e;
+}
+.loader {
+  color: #ffffff;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem auto;
+}
+.chat_con {
+  max-height: 30vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  margin: 1rem 0 2rem;
+  padding: 2rem 3rem;
+  background-color: #ffffff16;
+  border-radius: 1rem;
+  color: #ffffff;
+  display: none;
+}
+.chat_con div {
+  position: relative;
+}
+.chat_con div:first-of-type p.assistant {
+  display: none;
+}
+.chat_con div p.assistant {
+  color: #000000;
+  padding: 3.5rem 1.5rem 2rem;
+  border-radius: 1rem;
+  background-color: #ffe8e8;
+  width: 70%;
+  position: relative;
+  margin: 0.75rem 0;
+}
+.chat_con div p.assistant::before {
+  content: "\f544  GPT";
+  display: inline-block;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: #db202c;
+  position: absolute;
+  top: 1rem;
+  left: 1.5rem;
+}
+.chat_con > div {
+  position: relative;
+}
+.chat_con > div:nth-child(2n)::after {
+  position: absolute;
+  content: "";
+  top: 10%;
+  left: -30px;
+  border: 1rem solid transparent;
+  border-right: 1rem solid #ffe8e8;
+}
+.chat_con .chat_message {
+  display: flex;
+  justify-content: flex-end;
+}
+.chat_con .chat_message:nth-of-type(1),
+.chat_con .chat_message:nth-of-type(2),
+.chat_con .chat_message:nth-of-type(3) {
+  display: none;
+}
+.chat_con .chat_message .myQuestion {
+  font-size: 1rem;
+  background-color: #ecedff;
+  padding: 3rem 1.5rem 1rem;
+  border-radius: 1rem;
+  width: 50%;
+  color: #000000;
+  position: relative;
+  margin: 0.75rem 0;
+}
+.chat_con .chat_message .myQuestion::before {
+  content: "\f007  User";
+  display: inline-block;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: #000958;
+  position: absolute;
+  top: 1rem;
+  left: 1.5rem;
+}
+.chat_con > div:nth-child(2n - 1)::after {
+  position: absolute;
+  content: "";
+  top: 50%;
+  transform: translateY(-50%);
+  right: -30px;
+  border: 1rem solid transparent;
+  border-left: 1rem solid #ecedff;
+}
+.buttonBox {
+  display: flex;
+  flex-direction: column;
+}
+.chat_input {
+  width: 100%;
+  display: none;
+  justify-content: flex-start;
+  align-items: center;
+}
+.chat_input input {
+  display: inline-block;
+  width: calc(100% - 120px - 1rem);
+  background-color: #ffffff1d;
+  padding: 1rem;
+  margin-right: 1rem;
+  border-radius: 0.5rem;
+  outline: none;
+  border: none;
+}
+.chat_input input::placeholder {
+  color: #cacaca;
+}
+.chat_input input:focus {
+  background-color: #ffffff8d;
+}
+.chat_input button {
+  font-family: "GmarketSansMedium";
+  width: 120px;
+  height: 45px;
+  cursor: pointer;
+  background-color: #db202c;
+  color: #ffffff;
+  border-radius: 0.5rem;
+  outline: none;
+  border: none;
+  transition: 0.3s;
+}
+.chat_input button:hover {
+  background-color: #95040e;
+}
+.BtnReStart {
+  font-family: "GmarketSansMedium";
+  display: none;
+  padding: 1rem 2rem;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  background-color: transparent;
+  border: 2px solid #ffffff;
+  color: rgb(255, 255, 255);
+  font-size: 1rem;
+  transition: 0.3s;
+  margin: 2rem auto 0;
+  position: relative;
+}
+.BtnReStart::before {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: -1;
+  transition: 0.3s;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  background-color: #db202c;
+}
+.BtnReStart:hover::before {
+  width: 100%;
+}
+.kakaoAd {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+}
+
+@media (max-width: 650px) {
+  .wrap {
+    padding: 1.5rem;
+  }
+  .logo_img {
+    margin: 2rem auto 0;
+  }
+  .favorite_con {
+    margin-top: 2rem;
+  }
+  #BtnSendMessage {
+    margin-top: 3rem;
+  }
+  .chat_con {
+    padding: 1.5rem;
+  }
+  .chat_con div p.assistant {
+    font-size: 0.75rem;
+  }
+  .chat_con .chat_message .myQuestion {
+    font-size: 0.75rem;
+  }
+  .chat_input input {
+    width: calc(100% - 50px - 1rem);
+    font-size: 0.75rem;
+  }
+  .chat_input button {
+    width: 50px;
+  }
+  .BtnReStart {
+    margin-top: 1.5rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .BtnReStart {
+    width: 100%;
+    font-size: 0.75rem;
+  }
+}

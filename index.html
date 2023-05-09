@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GPTLIX</title>
+    <link rel="icon" href="./img/title_logo.png" />
+
+    <!-- 폰트어썸 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="bg">
+      <div class="wrap">
+        <div class="logo_img">
+          <img src="./img/title_logo.png" alt="logo" />
+        </div>
+        <div class="guide_chat">
+          <div class="favorite_con">
+            <label for="favorite">당신의 취향은 무엇인가요?</label>
+            <input
+              type="text"
+              id="favorite"
+              placeholder="좋아하는 영화, 드라마, 배우, 감독, 장르"
+            />
+          </div>
+          <div class="btnCon">
+            <button id="BtnSendMessage">추천받기</button>
+          </div>
+        </div>
+
+        <!-- 채팅내용 -->
+        <div class="chat_con">
+          <div class="chat_message">
+            <p class="assistant">
+              <!-- gpt 채팅내용 -->
+            </p>
+          </div>
+          <div class="chat_message">
+            <p>
+              <!-- 사용자 질문내용 -->
+            </p>
+          </div>
+        </div>
+        <!-- 챗 인풋 -->
+        <div class="buttonBox">
+          <div class="chat_input">
+            <input
+              type="text"
+              placeholder="영화에 관련된 다른 질문이 있나요?"
+            />
+            <button id="btn">질문하기</button>
+          </div>
+          <div class="reStartCon">
+            <button class="BtnReStart">새로운 추천받기</button>
+          </div>
+        </div>
+        <!-- 로딩중 나오는 아이콘 -->
+        <div class="loader">
+          <i class="fa-solid fa-spinner fa-2x fa-spin"></i>
+        </div>
+        <!-- 광고 -->
+        <div class="kakaoAd">
+          <ins
+            class="kakao_ad_area"
+            style="display: none"
+            data-ad-unit="DAN-sF7HAF278EfEa8My"
+            data-ad-width="350"
+            data-ad-height="50"
+          ></ins>
+        </div>
+      </div>
+    </div>
+
+    <script
+      type="text/javascript"
+      src="//t1.daumcdn.net/kas/static/ba.min.js"
+      async
+    ></script>
+
+    <script src="./index.js" defer></script>
+  </body>
+</html>
