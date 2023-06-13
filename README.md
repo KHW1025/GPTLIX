@@ -68,9 +68,4 @@
 <br>
 <br>
 
-> - 추천화면
-> <img width="350" alt="image" src="https://github.com/KHW1025/Today-s-Menu/assets/119498531/0960f197-ea30-46e1-a39a-6b3913a7fbac">
 
-
-<br>
-<br>
