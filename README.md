@@ -64,8 +64,8 @@
 > - 메인화면
 > <img width="350" alt="image" src="https://github.com/KHW1025/GPTLIX/assets/119498531/2f9f27f7-98ae-4677-bf5a-e106d3eae1cf">
 
-
 <br>
 <br>
 
-
+> - 추천화면
+> <img width="350" alt="image" src="https://github.com/KHW1025/GPTLIX/assets/119498531/3b97f02a-70c4-4f38-90ab-78951abae9d6">
